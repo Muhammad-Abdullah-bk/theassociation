@@ -1,0 +1,34 @@
+<%= content_for(:title,"Players") %>
+<h1>Listing <%=pluralize(@player.count,"player") %></h1>
+<table>
+  <thead>
+  <tr>
+    <td>First name</td>
+    <td>Last name</td>
+    <td>Information</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @player.each do |player| %>
+  <tr>
+
+    <td><%=player.first_name%></td>
+    <td><%=player.last_name%></td>
+    <td>
+      <%= link_to "Show Profile",player_path(player.id)%>
+          <%= link_to "Edit Profile",player_edit_path(player.id) %>
+      <%= link_to "Delete Profile",player_path(player.id), data:{method: :delete,confirm: "are u sure?"} %>
+
+    </td>
+
+
+  </tr>
+  <% end %>
+
+
+  </tbody>
+
+</table>
+<!--<a href="/players/new">Add New Player</a>-->
+
+<%= link_to "New player",players_new_path%>

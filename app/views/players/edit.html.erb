@@ -1,0 +1,35 @@
+<%= content_for(:title,"Edit #{@player.first_name} Profile") %>
+<h1>Edit <%=@player.first_name %>'s Information</h1>
+<%#if flash[:errors] %>
+  <%# flash[:errors].each do |e| %>
+<!--    <p><%#= e %></p>-->
+  <%#end %>
+<%# end%>
+<!--<form action="\players\<%#= @player.id %>" method="post">-->
+<!--  <input type="hidden" name="_method" value="patch">-->
+<!--  <input type="hidden" name="authenticity_token" value="<%#= form_authenticity_token %>">-->
+<!--  <p>-->
+<!--    <label><b>First Name</b></label>-->
+<!--    <input type="text" name="player[first_name]" value="<%#=@player.first_name %>">-->
+
+<!--  </p>-->
+<!--  <p>-->
+<!--    <label><b>Last Name</b></label>-->
+<!--    <input type="text" name="player[last_name]" value="<%#=@player.last_name %>">-->
+
+<!--  </p>-->
+<!--  <input type="submit" value="update">-->
+<!--</form>-->
+<%#= form_for(@player) do |p| %>
+<!--  <p>-->
+    <%#= p.label :first_name %>
+    <%#= p.text_field :first_name %>
+<!--  </p>-->
+<!--  <p>-->
+    <%#= p.label :last_name %>
+    <%#= p.text_field :last_name %>
+<!--  </p>-->
+  <%#= p.submit %>
+<%# end %>
+<%= render partial: "players/form"%>
+<%=link_to "Go back",players_path %>
